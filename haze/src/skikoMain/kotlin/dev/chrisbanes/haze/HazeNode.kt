@@ -128,7 +128,14 @@ private class SkiaHazeNode(
       placeable.placeWithLayer(x = 0, y = 0) {
         val position = coordinates?.let { it.positionInWindow() + calculateWindowOffset() }
           ?: Offset.Zero
-        renderEffect = getOrCreateRenderEffect(position)
+
+        //When x is less than 0 slide transition is executed and need to update RenderEffect on each position change.
+        if (position.x < 0f){
+          renderEffect = createHazeRenderEffect(position)
+        } else {
+          renderEffect = getOrCreateRenderEffect(position)
+        }
+//        renderEffect = getOrCreateRenderEffect(position)
       }
     }
   }
