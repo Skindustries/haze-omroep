@@ -7,7 +7,7 @@ plugins {
   id("dev.chrisbanes.kotlin.multiplatform")
   id("dev.chrisbanes.compose")
   id("androidx.baselineprofile")
-  id("org.jetbrains.dokka")
+//  id("org.jetbrains.dokka")
   id("com.vanniktech.maven.publish")
   id("me.tylerbwong.gradle.metalava")
   id("io.github.takahirom.roborazzi")
